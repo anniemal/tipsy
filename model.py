@@ -26,7 +26,6 @@ def authenticate(db, email, password):
     if result:
         fields = ["id", "email", "password", "username"]
         return make_user(result)
-
     return None
 
 def get_user(db, user_id):
@@ -37,7 +36,6 @@ def get_user(db, user_id):
     user_row = c.fetchone()
     if user_row:
         return make_user(user_row)
-
     return None
 
 def new_task(db, title, user_id = None):
@@ -74,7 +72,6 @@ def get_tasks(db, user_id=None):
     for row in rows:
         task = make_task(row)
         tasks.append(task)
-
     return tasks
 
 def get_task(db, task_id):
@@ -85,7 +82,6 @@ def get_task(db, task_id):
     task_row = c.fetchone()
     if task_row:
         return make_task(task_row)
-
     return None
 
 def make_task(row):
