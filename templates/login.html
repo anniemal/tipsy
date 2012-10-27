@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Please log in to your Flasky Tipsy Task List</h1>
+
+<form>
+    <form method="POST" action="{{ url_for("authenticate") }}">
+    <label for="email">Enter e-mail address
+    <input type="string" name="email">
+    <label for="password">Enter password
+    <input type="password" name="password">
+    <input type="submit">
+</input>
+</form>
+
+{% endblock %}
